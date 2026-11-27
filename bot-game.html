@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChessNova — Игра с ботом</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">ChessNova</div>
+        <a href="bot.html" class="back-link">← Назад</a>
+    </nav>
+
+    <main class="game-container">
+        <h1>Игра с ботом</h1>
+
+        <p id="turn-info">Загрузка игры...</p>
+        <p id="game-status"></p>
+
+        <div id="chessboard" class="chessboard"></div>
+
+        <button onclick="restartBotGame()" class="start-bot-button">
+            Новая игра
+        </button>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script src="bot-game.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,538 @@
+/* =================================
+ОСНОВА
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0d17;
+    color: white;
+    min-height: 100vh;
+}
+
+.navbar {
+    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 9%;
+    border-bottom: 1px solid #202337;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #8b75ff;
+}
+
+.nav-label {
+    color: #858ba5;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.back-button,
+.back-link {
+    color: #a99aff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* =================================
+2. ГЛАВНАЯ СТРАНИЦА
+================================= */
+
+.hero {
+    text-align: center;
+    padding: 85px 20px 60px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid #51458b;
+    border-radius: 30px;
+    color: #a99aff;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+}
+
+h1 {
+    font-size: clamp(55px, 9vw, 95px);
+    line-height: 1.05;
+    letter-spacing: -4px;
+}
+
+h1 span {
+    background: linear-gradient(90deg, #8b75ff, #43b9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: #a3a8bd;
+    line-height: 1.8;
+    font-size: 17px;
+    margin-top: 25px;
+}
+
+.modes {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin: 60px auto 35px;
+    max-width: 850px;
+}
+
+.mode-card {
+    width: 350px;
+    background: #141827;
+    border: 1px solid #292e45;
+    border-radius: 18px;
+    padding: 35px 28px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.mode-card:hover {
+    transform: translateY(-7px);
+    border-color: #8170ff;
+    box-shadow: 0 10px 40px #6752ff20;
+}
+
+.mode-icon {
+    font-size: 42px;
+    margin-bottom: 22px;
+}
+
+.mode-card h2 {
+    font-size: 23px;
+    margin-bottom: 13px;
+}
+
+.mode-card p {
+    color: #999fb5;
+    line-height: 1.6;
+    min-height: 52px;
+    margin-bottom: 25px;
+}
+
+.mode-card button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #755bff, #398cff);
+    border: none;
+    border-radius: 9px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.mode-card button:hover {
+    opacity: 0.85;
+    transform: scale(1.02);
+}
+
+.coming-soon {
+    color: #777e98;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 35px;
+}
+
+.coming-soon span {
+    color: #8b75ff;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #666d85;
+    border-top: 1px solid #202337;
+    font-size: 13px;
+}
+
+/* =================================
+3. ИГРА ВДВОЁМ
+================================= */
+
+.game-page {
+    min-height: 100vh;
+}
+
+.chess-container {
+    text-align: center;
+    padding: 45px 15px;
+}
+
+.game-title {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.game-title span {
+    color: #8b75ff;
+}
+
+.game-subtitle {
+    color: #999fb5;
+    margin-bottom: 30px;
+}
+
+.game-panel {
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #b9b4ff;
+}
+
+/* =================================
+4. ШАХМАТНАЯ ДОСКА
+================================= */
+
+.chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 1 / 1;
+    margin: 25px auto;
+    border: 4px solid #292e45;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.square,
+.light-square,
+.dark-square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.light-square {
+    background: #e8e0d5;
+}
+
+.dark-square {
+    background: #7888a8;
+}
+
+/* =================================
+5. ШАХМАТНЫЕ ФИГУРЫ
+================================= */
+
+.piece,
+.white-piece,
+.black-piece {
+    font-size: clamp(25px, 6vw, 52px);
+    line-height: 1;
+    user-select: none;
+    cursor: pointer;
+}
+
+.white-piece {
+    color: #FFFFFF !important;
+    -webkit-text-stroke: 0;
+    text-shadow: 0 2px 3px #00000080;
+}
+
+.black-piece {
+    color: #111111 !important;
+    -webkit-text-stroke: 0;
+    text-shadow: 0 1px 2px #ffffff55;
+}
+
+.selected-square {
+    background: #9c91ff !important;
+    outline: 3px solid #7057ff;
+    outline-offset: -3px;
+}
+
+.possible-move::after {
+    content: "";
+    width: 25%;
+    height: 25%;
+    background: #8b75ff;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.8;
+}
+
+/* =================================
+6. ШАХ
+================================= */
+
+.check-king {
+    background: #e53935 !important;
+    animation: checkFlash 3s ease-out;
+}
+
+@keyframes checkFlash {
+    0% {
+        background: #ff2424;
+    }
+
+    100% {
+        background: #e53935;
+    }
+}
+
+/* =================================
+7. РЕЗУЛЬТАТ ИГРЫ
+================================= */
+
+.game-result {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background: rgba(5, 7, 18, 0.82);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.result-box {
+    background: #191e31;
+    border: 1px solid #8270ff;
+    border-radius: 18px;
+    padding: 35px 20px;
+    width: 85%;
+    box-shadow: 0 0 40px #755bff35;
+}
+
+.result-box h2 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.result-box p {
+    color: #a3a8bd;
+}
+
+.restart-button {
+    margin-top: 25px;
+    padding: 14px 30px;
+    background: linear-gradient(90deg, #755bff, #398cff);
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.restart-button:hover {
+    opacity: 0.85;
+}
+
+/* =================================
+8. МЕНЮ БОТА
+================================= */
+
+.bot-menu {
+    max-width: 650px;
+    margin: 65px auto;
+    padding: 0 20px;
+}
+
+.bot-menu h1 {
+    font-size: 48px;
+    letter-spacing: -2px;
+    text-align: center;
+}
+
+.bot-menu h1 span {
+    color: #8b75ff;
+    background: none;
+    -webkit-text-fill-color: #8b75ff;
+}
+
+.bot-subtitle {
+    text-align: center;
+    color: #999fb5;
+    margin: 15px 0 45px;
+}
+
+.bot-menu h2 {
+    font-size: 19px;
+    margin: 30px 0 15px;
+}
+
+.difficulty-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.difficulty {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 17px;
+    background: #141827;
+    border: 1px solid #292e45;
+    border-radius: 12px;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.difficulty > span {
+    font-size: 22px;
+    color: #8b75ff;
+    font-weight: bold;
+}
+
+.difficulty strong,
+.difficulty small {
+    display: block;
+}
+
+.difficulty small {
+    color: #858ba5;
+    margin-top: 5px;
+}
+
+.difficulty:hover,
+.difficulty.active {
+    border-color: #8b75ff;
+    background: #201d39;
+}
+
+/* =================================
+9. ВЫБОР ЦВЕТА
+================================= */
+
+.color-options {
+    display: flex;
+    gap: 15px;
+}
+
+.color-choice {
+    flex: 1;
+    padding: 17px;
+    background: #141827;
+    border: 1px solid #292e45;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.color-choice.active {
+    border-color: #8b75ff;
+    background: #201d39;
+}
+
+/* =================================
+10. КНОПКА НАЧАЛА ИГРЫ
+================================= */
+
+.start-bot-button {
+    width: 100%;
+    margin-top: 35px;
+    padding: 17px;
+    background: linear-gradient(90deg, #755bff, #398cff);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.start-bot-button:hover {
+    opacity: 0.85;
+}
+
+/* =================================
+11. ИГРА С БОТОМ
+================================= */
+
+.game-container {
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.game-container h1 {
+    font-size: 48px;
+    letter-spacing: -2px;
+    line-height: 1.15;
+}
+
+.game-container .chessboard {
+    width: min(90vw, 480px);
+    margin: 25px auto;
+}
+
+/* =================================
+12. АДАПТИВНОСТЬ
+================================= */
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .nav-label {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .hero {
+        padding-top: 60px;
+    }
+
+    .mode-card {
+        width: 100%;
+    }
+
+    h1 {
+        letter-spacing: -2px;
+    }
+
+    .bot-menu {
+        margin-top: 40px;
+    }
+
+    .bot-menu h1 {
+        font-size: 38px;
+    }
+
+    .game-container h1 {
+        font-size: 36px;
+    }
+
+    .chess-container {
+        padding: 30px 10px;
+    }
+
+    .game-info {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChessNova — Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="game-page">
+
+    <header class="navbar">
+        <div class="logo">♟ Chess<span>Nova</span></div>
+        <a href="index.html" class="back-button">← На главную</a>
+    </header>
+
+    <main class="chess-container">
+
+        <h1 class="game-title">Chess<span>Nova</span></h1>
+        <p class="game-subtitle">Игра вдвоём на одном устройстве</p>
+
+        <div class="game-panel">
+
+            <div class="game-info">
+                <div id="turn-info">Ход белых</div>
+                <div id="game-status">Партия началась</div>
+            </div>
+
+            <div id="chessboard" class="chessboard"></div>
+
+            <button class="restart-button" onclick="restartGame()">
+                ↻ Новая партия
+            </button>
+
+        </div>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script src="game.js"></script>
+
+</body>
+</html>

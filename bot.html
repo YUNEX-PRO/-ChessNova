@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChessNova — Игра с ботом</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">♟ Chess<span>Nova</span></div>
+        <a href="index.html" class="back-button">← На главную</a>
+    </header>
+
+    <main class="bot-menu">
+
+        <h1>Игра с <span>ботом</span></h1>
+        <p class="bot-subtitle">Выбери соперника и приготовься к партии</p>
+
+        <h2>Уровень сложности</h2>
+
+        <div class="difficulty-list">
+
+            <button class="difficulty active" data-level="1">
+                <span>01</span>
+                <div>
+                    <strong>Новичок</strong>
+                    <small>Для начинающих игроков</small>
+                </div>
+            </button>
+
+            <button class="difficulty" data-level="2">
+                <span>02</span>
+                <div>
+                    <strong>Любитель</strong>
+                    <small>Немного сложнее</small>
+                </div>
+            </button>
+
+            <button class="difficulty" data-level="3">
+                <span>03</span>
+                <div>
+                    <strong>Средний игрок</strong>
+                    <small>Для уверенной игры</small>
+                </div>
+            </button>
+
+            <button class="difficulty" data-level="4">
+                <span>04</span>
+                <div>
+                    <strong>Продвинутый игрок</strong>
+                    <small>Серьёзный соперник</small>
+                </div>
+            </button>
+
+            <button class="difficulty" data-level="5">
+                <span>05</span>
+                <div>
+                    <strong>Профессионал</strong>
+                    <small>Самый сложный уровень</small>
+                </div>
+            </button>
+
+        </div>
+
+        <h2>Выбери свой цвет</h2>
+
+<div class="color-options">
+    <button class="color-choice active" data-color="w">
+        ♟ Белые
+    </button>
+
+    <button class="color-choice" data-color="b">
+        ♙ Чёрные
+    </button>
+</div>
+    
+
+        <button class="start-bot-button" id="startBot">
+            Начать игру →
+        </button>
+
+    </main>
+
+    <script src="bot.js"></script>
+</body>
+</html>

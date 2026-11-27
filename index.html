@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChessNova — Play Chess</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">♟ Chess<span>Nova</span></div>
+        <div class="nav-label">CHESS PLATFORM</div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="badge">♔ THE NEXT MOVE IS YOURS</div>
+
+            <h1>Think. Play.<br><span>Win.</span></h1>
+
+            <p class="subtitle">
+                Открой для себя мир шахмат.<br>
+                Играй, развивайся и побеждай.
+            </p>
+
+            <div class="modes">
+
+                <div class="mode-card">
+                    <div class="mode-icon">🤖</div>
+                    <h2>Играть с ботом</h2>
+                    <p>Проверь свои навыки против искусственного интеллекта.</p>
+                    <button onclick="selectMode('bot')">
+                        Выбрать режим ↗
+                    </button>
+                </div>
+
+                <div class="mode-card">
+                    <div class="mode-icon">♟</div>
+                    <h2>Играть вдвоём</h2>
+                    <p>Сразись с другом на одном устройстве.</p>
+                    <button onclick="selectMode('local')">
+                        Выбрать режим ↗
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="coming-soon">
+                <span>✦</span> ONLINE MODE — COMING SOON
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 ChessNova. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
